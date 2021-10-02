@@ -1,13 +1,13 @@
 {
-  "name": "vault-new",
+  "name": "vault-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "An API for my Vault website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "spinfal",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
