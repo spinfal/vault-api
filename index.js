@@ -10,7 +10,7 @@ const originSite = 'https://vault.spinfal.repl.co';
 const corsOptions = {
     origin: originSite
 }
-app.use(cors());
+app.use(cors(corsOptions));
 
 const limit = rateLimit({
   max: 15,// max requests
@@ -44,7 +44,7 @@ app.get('/status', (req, res) => {
 
 // get json from pantry
 app.get('/get', limit, async(req, res) => {
-  if (req.headers.origin !== originSite) return res.json(`{"error": "This API was built for ${originSite}"}`);
+  if (req.headers.origin !== originSite) return res.json(`This API was built for ${originSite}`);
   const user = req.headers.user;
   
   let _method = fetch(`https://getpantry.cloud/apiv1/pantry/${process.env['APIKEY']}/basket/${user}`);
@@ -56,7 +56,7 @@ app.get('/get', limit, async(req, res) => {
 
 // post data to pantry
 app.post('/post', limit, (req, res) => {
-  if (req.headers.origin !== originSite) return res.json(`{"error": "This API was built for ${originSite}"}`);
+  if (req.headers.origin !== originSite) return res.json(`This API was built for ${originSite}`);
   const user = req.query.user;
   
   fetch(`https://getpantry.cloud/apiv1/pantry/${process.env['APIKEY']}/basket/${user}`,{method:"POST",headers:{'Content-Type': 'application/json'},body:JSON.stringify(req.body)}).then(() => {
@@ -66,7 +66,7 @@ app.post('/post', limit, (req, res) => {
 
 // put data to pantry
 app.put('/put', limit, (req, res) => {
-  if (req.headers.origin !== originSite) return res.json(`{"error": "This API was built for ${originSite}"}`);
+  if (req.headers.origin !== originSite) return res.json(`This API was built for ${originSite}`);
   const user = req.query.user;
   const keyName = req.query.keyName;
   
