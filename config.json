@@ -1,0 +1,8 @@
+{
+  "originSite": "https://vault.spinfal.repl.co",
+  "maxRequests": 15,
+  "windowMs": 10000,
+  "maxPayloadSize": "700kb",
+  "port": 443,
+  "pantryKEY": "pantry key here - "
+}

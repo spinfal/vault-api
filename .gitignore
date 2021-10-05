@@ -1,1 +1,5 @@
+# ignore these
 package-lock.json
+
+# keep these
+!config.json
