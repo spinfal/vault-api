@@ -3,7 +3,7 @@ const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const fetch = require('node-fetch');
-const app = express();
+const app = express()
 const config = require('./config.json');
 
 /* setup server */
