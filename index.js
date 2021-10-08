@@ -1,8 +1,10 @@
+/* packages */
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const fetch = require('node-fetch');
+/* configuration/setup */
 const app = express();
 const config = require('./config.json');
 
@@ -87,6 +89,7 @@ app.put('/put', limit, (req, res) => {
   }).catch(e => res.json(`{"error": "${e}"}`));
 });
 
+// text to base64
 function toBase64(text) {
   const buff = Buffer.from(text, 'utf-8');
   const value = buff.toString('base64');
